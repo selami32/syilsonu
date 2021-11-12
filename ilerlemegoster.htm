@@ -1,0 +1,72 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-9">
+<script type="text/javascript" src="debug.js"></script>
+<link rel="stylesheet" type="text/css" href="ext2/resources/css/ext-all.css" />
+<!-- GC -->
+<!-- LIBS -->
+<script type="text/javascript" src="ext2/adapter/ext/ext-base.js"></script>
+<!-- ENDLIBS -->
+
+<script type="text/javascript" src="ext2/ext-all.js"></script>
+<script type="text/javascript" src="GroupSummary.js"></script>
+<script type="text/javascript" src="sabitler.js"></script>
+<script type="text/javascript" src="GroupHeaderPlugin.js"></script>
+<script type="text/javascript" src="ext2/shared/examples.js"></script><!-- EXAMPLES -->
+<link rel="stylesheet" type="text/css" href="progress-bar.css" />
+<link rel="stylesheet" type="text/css" href="../shared/examples.css" />
+
+</head>
+
+<body>
+
+<div id="p2" style="width:100%;"></div>
+<script language=javascript>
+
+var interval=self.setInterval(function(){ilerleme()},500);
+
+function ilerleme() {
+  //var d=new Date();
+  //var t=d.toLocaleTimeString();
+
+var rakam=0;
+                
+                  Ext.Ajax.request({
+											method: 'POST',
+											url: 'ilerlemegoster.php',                                        
+											success: function(response,opts){
+												var sonuc = response.responseText;
+											  //alert(Ext.decode(sonuc));
+											eval(sonuc);
+                           
+                          if (rakam==100){
+                              pbar.text='Tamamlandı';
+                              pbar.updateProgress(rakam/100, '%'+parseInt(rakam))
+
+                              window.clearInterval(interval);
+                              
+                          }else{
+                              pbar.updateProgress(rakam/100, '%'+parseInt(rakam))
+                          }
+											}
+											
+										});
+										
+}
+  
+
+var pbar = new Ext.ProgressBar({
+    text:'Hazır',
+    id:'pbar2',
+    cls:'center-align',
+    renderTo:'p2'
+});
+    
+
+</script>
+
+
+</body>
+
+
+</html>

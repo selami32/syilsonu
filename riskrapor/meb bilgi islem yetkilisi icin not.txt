@@ -1,0 +1,9 @@
+Merhaba sayýn yetkili,
+
+yýlsonu uygulamasýnda güvenliði artýrmak üzere her php sayfasýna session doðrulamasý eklendi.
+eðer bulduðunuz baþka sorunlar varsa ertanozgur@hotmail.com.tr adresine bildirebilir misiniz?
+
+teþekkürler, iyi çalýþmalar. 
+
+
+

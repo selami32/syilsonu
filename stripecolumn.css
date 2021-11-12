@@ -1,0 +1,26 @@
+.x-grid3-col-alt {
+    background-color:#fafafa !important;
+}
+.x-grid3-row-alt .x-grid3-col-alt {
+    background-color:#eaeaea !important;
+}
+/* Optionally, you can also override the styles for hovered/selected rows */
+.x-grid3-row-over .x-grid3-col-alt {
+    background: #e0e0e0 url(../images/default/grid/row-over.gif) repeat-x left top !important;
+}
+.x-grid3-row-selected .x-grid3-col-alt {
+    background: #d0d0f0 !important;
+    border:1px dotted #d0d0df0;
+}
+
+/*
+new Ext.grid.GridPanel({
+   ...usual grid config options...
+   ,stripeCols: true
+   ,excludeCStripe: ['f3']
+   ,skipCStripe: ['f6']
+   ,plugins: [ new Ext.ux.plugins.grid.stripeCols() ]
+   ...usual grid config options...
+});
+
+*/
